@@ -1,8 +1,8 @@
-import { Card, Typography, Space, Button, Input } from "antd";
+import { Card, Space, Button, Input } from "antd";
 import { PlusOutlined, SearchOutlined } from "@ant-design/icons";
 import { TableComponent } from "../components/table/Table";
+import Header from "../components/header/Header";
 
-const { Title } = Typography;
 const { Search } = Input;
 
 const OrganizationPage = () => {
@@ -17,14 +17,10 @@ const OrganizationPage = () => {
   return (
     <div style={{ padding: "0 24px" }}>
       {/* Header Section */}
-      <div style={{ marginBottom: 24 }}>
-        <Title level={2} style={{ margin: 0 }}>
-          Organización
-        </Title>
-        <Typography.Text type="secondary">
-          Gestiona la información de tu organización
-        </Typography.Text>
-      </div>
+      <Header 
+        title="Organización"
+        description="Gestiona la información de tu organización"
+      />
 
       {/* Actions Section */}
       <Card style={{ marginBottom: 24 }}>
