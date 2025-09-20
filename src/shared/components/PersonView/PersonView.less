@@ -1,0 +1,49 @@
+.person-view-trigger {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  user-select: none;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &:active {
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .person-avatar {
+    background-color: #fff;
+    color: #1890ff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+
+    .anticon {
+      color: #1890ff;
+    }
+  }
+
+  .person-name {
+    color: #fff;
+    white-space: nowrap;
+    margin-right: 15px;
+  }
+
+  .person-arrow {
+    color: #fff;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  &.ant-dropdown-open .person-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .person-view-trigger {
+    .person-name {
+      display: none;
+    }
+  }
+}

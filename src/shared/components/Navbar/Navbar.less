@@ -1,0 +1,36 @@
+.navbar {
+  background: #1890ff; 
+  border-bottom: 1px solid #eee;
+  border-left: rgb(0, 68, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px; 
+
+  .ant-menu {
+    background: transparent; 
+    color: #fff;
+    flex: 1; 
+    border: none; 
+
+    .ant-menu-item {
+      color: #fff; 
+      border-radius: 6px; 
+      margin: 0 4px; 
+      
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15); 
+      }
+
+      &.ant-menu-item-selected {
+        background: rgba(255, 255, 255, 0.25); 
+        font-weight: 500; 
+      }
+    }
+  }
+  
+  .person-view {
+    margin-left: auto; 
+  }
+}
