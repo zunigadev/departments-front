@@ -1,51 +1,34 @@
-import { Card, Space, Button, Input } from "antd";
-import { PlusOutlined, SearchOutlined } from "@ant-design/icons";
-import { TableComponent } from "../components/table/Table";
-import Header from "../components/header/Header";
+import { Button, Input, Tabs, type TabsProps } from "antd";
 
-const { Search } = Input;
+import Header from "../components/header/Header";
+import { Divisions } from "../components/Divisions/Divisions";
+
 
 const OrganizationPage = () => {
-  const handleAddNew = () => {
-    console.log("Agregar nueva organización");
-  };
+  
 
-  const handleSearch = (value: string) => {
-    console.log("Buscar:", value);
-  };
+  const items: TabsProps['items'] = [
+  {
+    key: '1',
+    label: 'Divisiones',
+    children: <Divisions />,
+  },
+  {
+    key: '2',
+    label: 'Colaboradores',
+    children: 'Sección de colaboradores',
+  }
+];
 
   return (
     <div style={{ padding: "0 24px" }}>
       {/* Header Section */}
       <Header 
         title="Organización"
-        description="Gestiona la información de tu organización"
       />
 
       {/* Actions Section */}
-      <Card style={{ marginBottom: 24 }}>
-        <Space style={{ width: "100%", justifyContent: "space-between" }}>
-          <Search
-            placeholder="Buscar organizaciones..."
-            allowClear
-            onSearch={handleSearch}
-            style={{ width: 300 }}
-            prefix={<SearchOutlined />}
-          />
-          <Button 
-            type="primary" 
-            icon={<PlusOutlined />}
-            onClick={handleAddNew}
-          >
-            Agregar Organización
-          </Button>
-        </Space>
-      </Card>
-
-      {/* Table Section */}
-      <Card>
-        <TableComponent />
-      </Card>
+      <Tabs defaultActiveKey="1" items={items}  />
     </div>
   );
 };
